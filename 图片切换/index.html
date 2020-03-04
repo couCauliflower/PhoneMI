@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			img{
+				width:500px;
+			}
+			.header{
+				width:500px;
+				margin:50px auto;
+				text-align:center;
+			}
+		</style>
+		<script type="text/javascript">
+		window.onload=function(){
+			var prev=document.getElementById("prev");
+			var next=document.getElementById("next");
+			var img=document.getElementById("img");
+			var info=document.getElementById("info");
+		    var imgArr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
+		    var index=0;
+		    info.innerHTML="一共"+imgArr.length+"张图片，当前是第"+(index+1)+"张";
+			prev.onclick=function(){
+				
+				index--;
+				if(index<0)index=imgArr.length-1;
+			img.src=imgArr[index];
+			info.innerHTML="一共"+imgArr.length+"张图片，当前是第"+(index+1)+"张";
+			};
+			next.onclick=function(){
+				
+				index++;
+				if(index>imgArr.length-1)index=0;
+				img.src=imgArr[index];
+				info.innerHTML="一共"+imgArr.length+"张图片，当前是第"+(index+1)+"张";
+			};
+		};
+			
+			
+			
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<p id="info"></p>
+			<img id="img" src="img/1.jpg" />
+			<button id="prev">上一张</button>
+			<button id="next">下一张</button>
+		</div>
+		
+	</body>
+</html>
